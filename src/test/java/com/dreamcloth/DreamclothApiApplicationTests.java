@@ -11,6 +11,7 @@ class DreamclothApiApplicationTests {
     @Test
     void contextLoads(ApplicationContext context) {
         Assert.notNull(context);
+        Assert.isNull(null);
     }
 
 }
