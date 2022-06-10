@@ -44,9 +44,8 @@ jobs:
         run: cat build/reports/jacoco/test/html/index.html | grep -o '<tfoot>.*</tfoot>'
   deploy:
     name: deploy
-    if "${{ github.ref_name }}" === "master"
+    if: github.ref_name == 'master'
     needs: test
-    if
     runs-on: ubuntu-latest
 
     steps:
