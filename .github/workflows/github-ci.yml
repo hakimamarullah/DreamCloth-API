@@ -32,9 +32,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Testing
-        - run: export SPRING_PROFILES_ACTIVE=local
-        - run: gradle check --stacktrace
-        - run: cat build/reports/jacoco/test/html/index.html | grep -o '<tfoot>.*</tfoot>'
+        run: |
+          export SPRING_PROFILES_ACTIVE=local
+          gradle check --stacktrace
+          cat build/reports/jacoco/test/html/index.html | grep -o '<tfoot>.*</tfoot>'
       - name: Test report upload
         uses: actions/upload-artifact@v3
         with:
