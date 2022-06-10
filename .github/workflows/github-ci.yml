@@ -35,10 +35,10 @@ jobs:
         run: |
           export SPRING_PROFILES_ACTIVE=local
           gradle check --stacktrace
-      - name: Test report upload
-        uses: actions/upload-artifact@v3
-        with:
-          name: Test report
-          path: build/reports/jacoco
-      - name: Print result
-        run: cat build/reports/jacoco/test/html/index.html | grep -o '<tfoot>.*</tfoot>'
+#      - name: Test report upload
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: Test report
+#          path: build/reports/jacoco
+#      - name: Print result
+#        run: cat build/reports/jacoco/test/html/index.html | grep -o '<tfoot>.*</tfoot>'
